@@ -16,7 +16,7 @@ media_dir = "/var/www/media/"
 if ("query" not in form and "watch" not in form):
 	print("Content-type: text/plain\n")
 	print("No search query entered.")
-	exit
+	sys.exit(0)
 
 if ("watch" in form):
 	watch = str(form["watch"].value)
@@ -31,7 +31,7 @@ if ("watch" in form):
 			f.close()
 			break
 		sys.stdout.write(chunk)
-	exit
+	sys.exit(0)
 
 
 query = str(form["query"].value)
