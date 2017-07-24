@@ -16,10 +16,13 @@ onlinemedia.xml, set up with WiiMC, allows WiiMC to view Youtube videos.
 
 1. Copy youtube.py to your web server's cgi directory.
 
-2. Install the youtube-dl binary (https://rg3.github.io/youtube-dl/download.html)
+2. Edit the media_dir line of youtube.py. Point media_dir to whatever directory
+you want your cache of youtube files to be in.
+
+3. Install the youtube-dl binary (https://rg3.github.io/youtube-dl/download.html)
 into your path (such as /usr/local/bin/)
 
-3. Edit WiiMC's onlinemedia.xml file. This is a settings file, probably on your
+4. Edit WiiMC's onlinemedia.xml file. This is a settings file, probably on your
 SD card, probably in the apps/wiimc/ directory. The Youtube lines, by default,
 look like this:
 

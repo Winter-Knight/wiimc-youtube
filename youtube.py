@@ -10,6 +10,9 @@ import subprocess
 import sys
 import os
 
+# IMPORTANT: This directory must exist, and the web user must have full access to it
+media_dir = "/var/www/media/"
+
 if ("query" not in form and "watch" not in form):
 	print("Content-type: text/plain\n")
 	print("No search query entered.")
@@ -17,7 +20,7 @@ if ("query" not in form and "watch" not in form):
 
 if ("watch" in form):
 	watch = str(form["watch"].value)
-	outfile = "/var/www/media/" + watch + ".mp4"
+	outfile = media_dir + watch + ".mp4"
 	subprocess.call(["youtube-dl", "-f", "18", "-o", outfile, "https://www.youtube.com/watch?v=" + watch], stdout = open("/dev/null", "w"))
 	print("Content-type: video/mp4")
 	print("Content-Length: " + str(os.path.getsize(outfile)) + "\n")
