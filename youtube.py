@@ -19,7 +19,7 @@ if ("query" not in form and "watch" not in form):
 	sys.exit(0)
 
 if ("watch" in form):
-	watch = str(form["watch"].value)
+	watch = re.sub(r'[./]', '', str(form["watch"].value))
 	outfile = media_dir + watch + ".mp4"
 	subprocess.call(["youtube-dl", "-f", "18", "-o", outfile, "https://www.youtube.com/watch?v=" + watch], stdout = open("/dev/null", "w"))
 	print("Content-type: video/mp4")
