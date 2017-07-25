@@ -4,6 +4,7 @@ response, there was a request to make WiiMC able to download and play Youtube
 videos. The file youtube.py, properly set up with a web server, and
 onlinemedia.xml, set up with WiiMC, allows WiiMC to view Youtube videos.
 
+
 # Setup
 ## Prerequisites
 
@@ -27,16 +28,16 @@ into your path (such as /usr/local/bin/)
 SD card, probably in the apps/wiimc/ directory. The Youtube lines, by default,
 look like this:
 
-```html
-<link name="YouTube" addr="http://www.wiimc.org/media/youtube.php" />
-<link name="YouTube - Search" type="search" addr="http://www.wiimc.org/media/youtube.php?q=" />
-```
+    <link name="YouTube" addr="http://www.wiimc.org/media/youtube.php" />
+    <link name="YouTube - Search" type="search" addr="http://www.wiimc.org/media/youtube.php?q=" />
+
 Edit them to look more like this:
-```html
-<link name="YouTube" type="search" addr="http://yourdomainorip/yourpathtoyoutubepy/youtube.py?watch=" />
-<link name="YouTube - Search" type="search" addr="http://yourdomainorip/yourpathtoyoutubepy/youtube.py?query=" />
-```
+
+    <link name="YouTube" type="search" addr="http://yourdomainorip/yourpathtoyoutubepy/youtube.py?watch=" />
+    <link name="YouTube - Search" type="search" addr="http://yourdomainorip/yourpathtoyoutubepy/youtube.py?query=" />
+
 Note that they are now both type="search" and they both point to youtube.py.
+
 
 # Warning regarding bandwidth.
 
